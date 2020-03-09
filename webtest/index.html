@@ -4,10 +4,36 @@
     <title>Web Test</title>
   </head>
   <body>
-  <p id="words">0</p>
-    <script type="text/javascript">
+    <canvas id="myCanvas" width="600" height="600"></canvas>
 
-    /*  console.log("testing");
+    <script>
+
+      var c = document.getElementById("myCanvas");
+      var ctx = c.getContext("2d");
+
+      function drawRect(x) {
+        ctx.beginPath();
+        ctx.lineWidth = "4";
+        ctx.strokeStyle = "green";
+        ctx.rect(x, 5, 100, 100);
+        ctx.stroke();
+      }
+      drawRect(5);
+
+      var x = 5
+
+      function moveRect () {
+        ctx.clearRect(0, 0, 600, 600);
+        drawRect(x += 4);
+        if (x < 401) {
+          requestAnimationFrame(moveRect);
+        }
+      }
+      moveRect(x);
+
+ /*
+console.log("testing");
+
       var string = "";
       for (var i = 0; i < 10; i++) {
         //console.log(i);
@@ -22,10 +48,7 @@
         if (insideP < 6) {
       p.innerHTML = (insideP += 1);
     }
-  });*/
-
-
-
+  });
       function a (g) {
         if (g % 2 === 0) {
           console.log("even");
@@ -36,8 +59,8 @@
       }
       a(99) ;
       a(100);
-
-   </script>
+*/
+      </script>
   </body>
 
 
